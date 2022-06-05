@@ -1,0 +1,6 @@
+Wskaźniki typu void
+
+W C wskaźniki dowolnego typu mogą być przydzielane do wskaźników typu void i odwrotnie
+
+W C++ wymagana jest jawna konwersja.
+

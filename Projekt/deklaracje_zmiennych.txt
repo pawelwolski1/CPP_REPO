@@ -1,0 +1,4 @@
+W c++ deklaracja jest typem instrukcji. Można deklarować zmienne w dowolnym miejscu programu.
+
+
+

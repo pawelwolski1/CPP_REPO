@@ -1,0 +1,4 @@
+Komentarze
+
+/* komentarz wieloliniowy w C i C++ */
+// komentarz jednoliniowy w C++

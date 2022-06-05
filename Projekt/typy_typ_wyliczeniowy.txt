@@ -1,0 +1,5 @@
+Typ wyliczeniowy
+
+W C++ zmiennej danego typu wyliczeniowego można przypisać jedynie stałą należącą do definicji tego typu.
+W C++ przy deklaracji zmiennych typu wyliczeniowego można pominąć słowo enum
+W c++ można definiować lokalne typy wyliczeniowe (w obrębie struktur lub klas).

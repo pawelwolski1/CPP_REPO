@@ -1,0 +1,4 @@
+Typ znakowy
+
+W C pojedyncze znaki np.'x' '\n' są typu int.
+W C++ pojedyncze znaki są typu char.

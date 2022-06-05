@@ -1,0 +1,3 @@
+Nowe słowa kluczowe:
+
+class, delete, new, friend
