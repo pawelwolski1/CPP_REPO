@@ -1,0 +1,10 @@
+Strumienie (iostream.h):
+
+1. wejsciowy: cin (klawiatura) // nie wczytuje spacji!
+2. wyjsciowy: cout (ekran)
+3. wyjsciowy dla bledow: cerr (ekran)
+4. wyjsciowy dla bledow: clog (buforowany ekran)
+
+Operatory:
+
+>> - wejscie           << - wyjscie

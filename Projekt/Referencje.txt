@@ -1,0 +1,2 @@
+W C++ można tworzyć tzw. zmienne referencyjne. Jeśli zadeklarujemy zmienną referencyjną do innej zmiennej, to jakiekolwiek zmiany wartości dowolnej z powiązanych w ten sposób zmiennych będą odnosiły się również do drugiej z nich.
+

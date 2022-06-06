@@ -1,0 +1,9 @@
+Zapewniają lokalność nazw w kodzie, pozwalając uniknąć konfliktów nazw
+	–Domyślnie nazwy należą do globalnej przestrzeni nazw
+•Nie były dostępne w pierwszych wersjach C++
+	–Stare książki, tutoriale, mogą ich nie uwzględniać
+•Deklaracja przestrzeni nazw: namespaceprzestrzen{ ... }
+•Odwołanie do nazwy z innej przestrzeni nazw: przestrzen::nazwa
+•Dyrektywa using pozwala na odwołania do nazw z innej przestrzeni bez prefiksu
+	–usingnamespaceprzestrzen;
+	–usingprzestrzen::nazwa;

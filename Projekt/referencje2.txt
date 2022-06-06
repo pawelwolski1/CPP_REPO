@@ -1,0 +1,1 @@
+Referencja jest najczęściej wykorzystywana w funkcjach modyfikujących swoje argumenty. (W C konieczne było w tym celu przekazywanie do funkcji wskaźników do zmiennych).

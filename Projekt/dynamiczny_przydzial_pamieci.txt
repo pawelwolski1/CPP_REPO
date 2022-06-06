@@ -1,0 +1,1 @@
+W C++ operatory newi delete(W C malloc, calloc, realloc, free,sizeof, konwersje wskaźników zvoid*)

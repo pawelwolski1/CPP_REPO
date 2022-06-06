@@ -1,0 +1,6 @@
+Definiowanie zbioru funkcjii o tej samej nazwie, różniących się liczbą i/lub typem parametrów
+
+void fun(int a) { ... }
+void fun(float a) { ... }
+
+Przeciążanie funkcji w połączeniu z argumentami domyślnymi może prowadzić do niejednoznaczności - błędu.

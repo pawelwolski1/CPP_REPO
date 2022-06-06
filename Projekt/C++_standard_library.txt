@@ -1,0 +1,9 @@
+•Standardowa biblioteka C++ (objęta standardem ISO języka C++)
+•Kolekcja podstawowych klas i funkcji 
+	–Kontenery (list, map, set, ...)
+	–Łańcuchy znaków (string, regex)
+	–Strumienie (istream, ostream, ...)
+	–...
+	–Obiekty strumieni (cin, cout, ...)
+•Pliki nagłówkowe bez rozszerzenia *.h
+•Składniki zadeklarowane w przestrzeni nazw std
