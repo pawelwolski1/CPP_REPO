@@ -17,230 +17,13 @@ int menu_typy();
 int main_menu();
 
 
-// zakolorowane kody do wyswietlania
-void kod_deklaracje_zmiennych();
-void kod_domyslne_argumenty_funkcji();
-void kod_przeciazanie_funkcji();
-void kod_referencje();
-void kod_referencje2();
-void kod_dynamiczny_przydzial_pamieci();
-void kod_dynamiczny_przydzial_pamieci2();
 
+class Codes{
 
+public:
 
-void roznice();
-void which_menu();
-void which_menu_roznice();
-string which_menu_string;
-
-bool flaga_exit = false;
-bool flaga_main_menu = false;
-
-
-void which_menu(){
-	if (which_menu_string == "menu_roznice"){
-		menu_roznice();
+	Codes (){
 	}
-	if (which_menu_string == "menu_typy"){
-		menu_typy();
-	}
-	which_menu_string = "";
-	main_menu();
-}
-
-
-void menu_powrot_print(){
-	cout << "1.Powrót\n2.Powrót do menu głównego\n3.Wyjście\n" <<endl;
-}
-
-int menu_powrot(){
-	int k;
-	menu_powrot_print();
-	cin >> k;
-	switch(k)
-{
-case 1:
-	clear();
-	which_menu();
-	return 1;
-
-case 2:
-	clear();
-	flaga_main_menu = true;
-	return 2;
-case 3:
-	clear();
-	flaga_exit = true;
-	return 3;
-default:
-	return 0;
-}
-}
-
-void main_menu_print(){
-	cout << "1.Różnice ogólne\n2.Typy zmiennych\n3.Deklaracje zmiennych\n4.Struktury i unie\n5.Domyślne argumenty funkcji\n6.Przeciążanie funkcji\n7.Referencje\n8.Dynamiczny przydział pamięci\n9.Strumienie wejście/wyjście\n10.Przestrzenie nazw\n11.C++ Standard Library\n12. WYJŚCIE\n13.INTRO\n" << endl;
-}
-
-
-
-int main_menu(){
-	int k;
-	main_menu_print();
-	cin >> k;
-	switch (k)
-{
-case 1:
-	clear();
-	menu_roznice();
-	return 1;
-case 2:
-	clear();
-	menu_typy();
-	return 2;
-case 3:
-	clear();
-	odczyt("deklaracje_zmiennych.txt");
-	kod_deklaracje_zmiennych();
-	menu_powrot();
-	return 3;
-case 4:
-	clear();
-	odczyt("struktury_i_unie.txt");
-	menu_powrot();
-	return 4;
-case 5:
-	clear();
-	kod_domyslne_argumenty_funkcji();
-	menu_powrot();
-	return 5;
-
-case 6:
-
-	clear();
-	odczyt("przeciazanie_funkcji.txt");
-	kod_przeciazanie_funkcji();
-	menu_powrot();
-	return 6;
-case 7:
-	clear();
-	odczyt("Referencje.txt");
-	kod_referencje();
-	odczyt("referencje2.txt");
-	kod_referencje2();
-	menu_powrot();
-	return 7;
-case 8:
-	clear();
-	odczyt("dynamiczny_przydzial_pamieci.txt");
-	kod_dynamiczny_przydzial_pamieci();
-	kod_dynamiczny_przydzial_pamieci2();
-	menu_powrot();
-	return 8;
-case 9:
-	clear();
-	odczyt("strumieniowe_wejscie_wyjscie.txt");
-	menu_powrot();
-	return 9;
-case 10:
-	clear();
-	odczyt("przestrzenie_nazw.txt");
-	menu_powrot();
-	return 10;
-case 11:
-	clear();
-	odczyt("C++_standard_library.txt");
-	menu_powrot();
-	return 11;
-case 12:
-	flaga_exit = true;
-	return 12;
-case 13:
-	clear();
-	roznice();
-	menu_powrot();
-	return 13;
-
-
-default:
-	clear();
-	cout << "NIE WIEM CO ZROBIC!" << endl;
-	return 0;}
-}
-
-void menu_typy_print(){
-	cout <<"1.Typ znakowy\n2.Typ wyliczeniowy" <<endl;
-}
-
-
-int menu_typy(){
-	int k;
-	menu_typy_print();
-	cin >> k;
-	switch (k)
-{
-case 1:
-	which_menu_string = "menu_typy";
-	odczyt("typy_typ_znakowy.txt");
-	menu_powrot();
-	return 1;
-case 2:
-	which_menu_string = "menu_typy";
-	odczyt("typy_typ_wyliczeniowy.txt");
-	menu_powrot();
-default:
-	return 0;
-}
-}
-void menu_roznice_print(){
-	cout <<"1.Słowa kluczowe\n2.Komentarze\n3.Wskaźniki typu void"<<endl;
-	}
-
-int menu_roznice(){
-	clear();
-	int k;
-	menu_roznice_print();
-	cin >> k;
-	switch (k)
-{
-case 1:
-	which_menu_string = "menu_roznice";
-	odczyt("roznice_ogolne_slowa_kluczowe.txt");
-	menu_powrot();
-	return 1;
-case 2:
-	which_menu_string = "menu_roznice";
-	odczyt("roznice_ogolne_komentarze.txt");
-	menu_powrot();
-	return 2;
-case 3:
-	which_menu_string = "menu_roznice";
-	odczyt("roznice_ogolne_wskazniki_typu_void.txt");
-	menu_powrot();
-	return 3;
-default:
-	return 0;}
-}
-void odczyt(string sciezka){
-	ifstream odczyt(sciezka);
-	char z;
-	while (!odczyt.eof()){
-		odczyt.get(z);
-		usleep(2000);
-		cout << z << flush;
-	}
-	odczyt.close();
-}
-
-void press_enter(){
-	string temp;
-	cin.ignore();
-	getline(cin,temp);
-}
-
-
-void clear() {
-    cout << "\x1B[2J\x1B[H";
-}
 
 void kod_deklaracje_zmiennych(){
 	printf("main()\n  {\n	printf(");red("\"Poczatek\\n\"");printf(");\n");blue("	int");
@@ -349,12 +132,241 @@ void roznice(){
 	red("Plik programu C++ jest zapisany z rozszerzeniem .CPP.\n");
 
 }
+};
+
+void which_menu();
+void which_menu_roznice();
+string which_menu_string;
+
+bool flaga_exit = false;
+bool flaga_main_menu = false;
+
+Codes *kody = new Codes();
+
+
+void which_menu(){
+	if (which_menu_string == "menu_roznice"){
+		menu_roznice();
+	}
+	if (which_menu_string == "menu_typy"){
+		menu_typy();
+	}
+	which_menu_string = "";
+	main_menu();
+}
+
+
+void menu_powrot_print(){
+	cout << "\n\n\n1.Powrót\n2.Powrót do menu głównego\n3.Wyjście\n" <<endl;
+}
+
+int menu_powrot(){
+	int k;
+	menu_powrot_print();
+	cin >> k;
+	switch(k)
+{
+case 1:
+	clear();
+	which_menu();
+	return 1;
+
+case 2:
+	clear();
+	flaga_main_menu = true;
+	return 2;
+case 3:
+	clear();
+	flaga_exit = true;
+	return 3;
+default:
+	cout << "NIE WIEM CO ROBIĆ WRACAM DO MENU" << endl;
+	flaga_main_menu = true;
+	return 0;
+}
+}
+
+void main_menu_print(){
+	cout << "1.Różnice ogólne\n2.Typy zmiennych\n3.Deklaracje zmiennych\n4.Struktury i unie\n5.Domyślne argumenty funkcji\n6.Przeciążanie funkcji\n7.Referencje\n8.Dynamiczny przydział pamięci\n9.Strumienie wejście/wyjście\n10.Przestrzenie nazw\n11.C++ Standard Library\n12. WYJŚCIE\n13.INTRO\n" << endl;
+}
+
+
+
+int main_menu(){
+	clear();
+	yellow("Jesli jest to twoja pierwsza wizyta w tym programie polecam zapoznac sie z ogolnymi roznicami C/C++, zawartymi w INTRO pod nr 13, POWODZENIA\n");
+	int k;
+	main_menu_print();
+	cin >> k;
+	switch (k)
+{
+case 1:
+	clear();
+	menu_roznice();
+	return 1;
+case 2:
+	clear();
+	menu_typy();
+	return 2;
+case 3:
+	clear();
+	odczyt("deklaracje_zmiennych.txt");
+	kody->kod_deklaracje_zmiennych();
+	menu_powrot();
+	return 3;
+case 4:
+	clear();
+	odczyt("struktury_i_unie.txt");
+	menu_powrot();
+	return 4;
+case 5:
+	clear();
+	kody->kod_domyslne_argumenty_funkcji();
+	menu_powrot();
+	return 5;
+
+case 6:
+
+	clear();
+	odczyt("przeciazanie_funkcji.txt");
+	kody->kod_przeciazanie_funkcji();
+	menu_powrot();
+	return 6;
+case 7:
+	clear();
+	odczyt("Referencje.txt");
+	kody->kod_referencje();
+	odczyt("referencje2.txt");
+	kody->kod_referencje2();
+	menu_powrot();
+	return 7;
+case 8:
+	clear();
+	odczyt("dynamiczny_przydzial_pamieci.txt");
+	kody->kod_dynamiczny_przydzial_pamieci();
+	kody->kod_dynamiczny_przydzial_pamieci2();
+	menu_powrot();
+	return 8;
+case 9:
+	clear();
+	odczyt("strumieniowe_wejscie_wyjscie.txt");
+	menu_powrot();
+	return 9;
+case 10:
+	clear();
+	odczyt("przestrzenie_nazw.txt");
+	menu_powrot();
+	return 10;
+case 11:
+	clear();
+	odczyt("C++_standard_library.txt");
+	menu_powrot();
+	return 11;
+case 12:
+	clear();
+	flaga_exit = true;
+	return 12;
+case 13:
+	clear();
+	kody->roznice();
+	menu_powrot();
+	return 13;
+
+
+default:
+	clear();
+	cout << "NIE WIEM CO ZROBIC! UCIEKAM!" << endl;
+	usleep(10000);
+	flaga_exit=true;
+	return 0;}
+}
+
+void menu_typy_print(){
+	cout <<"1.Typ znakowy\n2.Typ wyliczeniowy" <<endl;
+}
+
+
+int menu_typy(){
+	int k;
+	menu_typy_print();
+	cin >> k;
+	switch (k)
+{
+case 1:
+	clear();
+	which_menu_string = "menu_typy";
+	odczyt("typy_typ_znakowy.txt");
+	menu_powrot();
+	return 1;
+case 2:
+	clear();
+	which_menu_string = "menu_typy";
+	odczyt("typy_typ_wyliczeniowy.txt");
+	menu_powrot();
+default:
+	cout << "NIE WIEM CO ROBIC WRACAM DO MENU!"<<endl;
+	flaga_main_menu = true;
+	return 0;
+}
+}
+void menu_roznice_print(){
+	cout <<"1.Słowa kluczowe\n2.Komentarze\n3.Wskaźniki typu void"<<endl;
+	}
+
+int menu_roznice(){
+	clear();
+	int k;
+	menu_roznice_print();
+	cin >> k;
+	switch (k)
+{
+case 1:
+	clear();
+	which_menu_string = "menu_roznice";
+	odczyt("roznice_ogolne_slowa_kluczowe.txt");
+	menu_powrot();
+	return 1;
+case 2:
+	clear();
+	which_menu_string = "menu_roznice";
+	odczyt("roznice_ogolne_komentarze.txt");
+	menu_powrot();
+	return 2;
+case 3:
+	clear();
+	which_menu_string = "menu_roznice";
+	odczyt("roznice_ogolne_wskazniki_typu_void.txt");
+	menu_powrot();
+	return 3;
+default:
+	flaga_main_menu = true;
+	return 0;}
+}
+void odczyt(string sciezka){
+	ifstream odczyt(sciezka);
+	char z;
+	while (!odczyt.eof()){
+		odczyt.get(z);
+		usleep(2000);
+		cout << z << flush;
+	}
+	odczyt.close();
+}
+
+void press_enter(){
+	string temp;
+	cin.ignore();
+	getline(cin,temp);
+}
+
+
+void clear() {
+    cout << "\x1B[2J\x1B[H";
+}
 
 int main(){
 	int k;
 	string temp;
-	cout << "To jest program do nauki różnic w C i C++\n" <<endl;
-	yellow("Jesli jest to twoja pierwsza wizyta w tym programie polecam zapoznac sie z ogolnymi roznicami C/C++, zawartymi w INTRO pod nr.13\n");
 	while (k != 0){
 	main_menu();
 	if (flaga_exit){
