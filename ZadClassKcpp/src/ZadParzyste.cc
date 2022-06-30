@@ -21,7 +21,6 @@ int Parzysta::main(){
 	int num;
 	cout << "Podaj liczbę całkowitą:" << endl;
 	cin >> num;
-	cout <<funA(num)<<endl;
 	funB(num);
 	funC(num);
 	return 0;
