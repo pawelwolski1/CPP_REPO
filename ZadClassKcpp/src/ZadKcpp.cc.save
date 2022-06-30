@@ -1,0 +1,60 @@
+#include <iostream>
+#include "ZadKcpp.h"
+
+void functions::zad1(){
+    Parzysta *zad1 = new Parzysta;
+    delete zad1;
+}
+void functions::zad2(){
+    Petla *zad2 = new Petla;
+    delete zad2;
+}
+void functions::zad3(){
+    Przekazywanie *zad3= new Przekazywanie;
+    delete zad3;
+}
+void functions::zad4(){
+    Przekazywanie_rozmiar *zad4 = new Przekazywanie_rozmiar;
+    delete zad4;
+}
+
+
+int Menu() {
+        int choice;
+        do {
+            std::cout << std::endl << "MENU" << std::endl << std::endl;
+            std::cout <<"1) Petle" <<
+                std::endl <<"2) Parzysta" <<
+                std::endl << "3) Przekazywanie Tablic z podaniem rozmiaru" <<
+                std::endl << "4) Adresowanie pamieci" <<
+                std::endl << "5) Arytmetyka wskaznikow" <<
+                std::endl << "6) Wyjdz"
+                << std::endl << std::endl;
+
+            std::cin >> choice;
+            switch(choice) {
+                case 1:
+                    zadPetle();
+                    break;
+                case 2:
+                    zadParzysta();
+                    break;
+                case 3:
+                    zadPrzekazywanieTablicZpodaniemRozmiaru();
+                    break;
+                case 4:
+                    zadAdresowaniePamieci();
+                    break;
+                case 5:
+                    zadArytmetykaWskaznikow();
+                    break;
+                case 6:
+                    break;
+                default:
+                    std::cout << " Nie ma takiej opcji w MENU";
+                    break;
+            }
+        }
+        while(choice != 6);
+        return 0;
+    }
